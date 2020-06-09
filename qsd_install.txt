@@ -1,0 +1,42 @@
+Stuff I've had to do:
+
+All links for OS 10.14 (Mojave)
+
+install fftw3 (http://www.fftw.org/fftw-3.3.8.tar.gz)
+
+install gfortran separately (https://github.com/fxcoudert/gfortran-for-macOS/releases/download/8.2/gfortran-8.2-Mojave.dmg)
+
+install openmpi: brew install open-mpi
+-----------------
+TROUBLESHOOTING:
+
+if getting error:
+ld: can't find gfortran (roughly this error)
+
+add export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/gfortran/lib to bash_profile so that the linker knows where to look for gfortran libs (the library might be installed somewhere else so you could have to look for where it is by running:
+sudo find / -name "*gfortran*.a")
+Then, run source ~/.bash_profile
+
+if g++ is not present: brew install g++
+
+-----------------
+COMPILATION:
+
+run:
+make all
+
+(don't need to specify target)
+(you'll see a bunch of warnings but they should be fine. I'll refactor the code and get ride of those.)
+
+to run the test code, you'll need to make the testprog file executable by running:
+
+chmod +x testprog
+
+run the test file by: ./testprog
+
+-----------------
+TEST RESULTS I GOT:
+output_that_ammar_got
+
+EXPECTED RESULTS in:
+TEST
